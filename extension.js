@@ -6,31 +6,35 @@ function activate(context) {
     // Register an event listener for onType
     vscode.workspace.onDidChangeTextDocument(event => {
         if (vscode.window.activeTextEditor && event.document === vscode.window.activeTextEditor.document) {
-            // Get the current position of the cursor
-            const position = vscode.window.activeTextEditor.selection.active;
+            const isEnabled = vscode.workspace.getConfiguration('smoke-typer').get('enable', true);
 
-            // Create a TextEditorDecorationType for the effect
-            const decorationType = vscode.window.createTextEditorDecorationType({
-                backgroundColor: 'rgb(201 201 196 / 30%)',
-                borderRadius: '3px'
-            });
+            if (isEnabled) {
+                // Get the current position of the cursor
+                const position = vscode.window.activeTextEditor.selection.active;
 
-            // Define a range for the effect (e.g., one character around the cursor)
-            const range = new vscode.Range(position.translate(0, -1), position.translate(0, 1));
+                // Create a TextEditorDecorationType for the effect
+                const decorationType = vscode.window.createTextEditorDecorationType({
+                    backgroundColor: 'rgb(201 201 196 / 30%)',
+                    borderRadius: '3px'
+                });
 
-            // Add the decoration to the editor
-            vscode.window.activeTextEditor.setDecorations(decorationType, [{ range }]);
+                // Define a range for the effect (e.g., one character around the cursor)
+                const range = new vscode.Range(position.translate(0, -1), position.translate(0, 1));
 
-            // Dispose the decoration after a short delay (e.g., 500 milliseconds)
-            setTimeout(() => decorationType.dispose(), 600);
+                // Add the decoration to the editor
+                vscode.window.activeTextEditor.setDecorations(decorationType, [{ range }]);
+
+                // Dispose the decoration after a short delay (e.g., 500 milliseconds)
+                setTimeout(() => decorationType.dispose(), 600);
+            }
         }
     });
 
-	let disposable = vscode.commands.registerCommand('smoke-typer.start', function () {
-		vscode.window.showInformationMessage('Smoke typer start');
-	});
-	
-	context.subscriptions.push(disposable);
+    let disposable = vscode.commands.registerCommand('smoke-typer.start', function () {
+        vscode.window.showInformationMessage('Smoke typer start');
+    });
+
+    context.subscriptions.push(disposable);
 }
 
 function deactivate() {}
@@ -39,4 +43,3 @@ module.exports = {
     activate,
     deactivate
 };
-

@@ -16,9 +16,21 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./extension.js",
   "contributes": {
+    "configuration": {
+      "title": "Smoke Typer",
+      "properties": {
+        "smoke-typer.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Smoke Typer Effect"
+        }
+      }
+    },
     "commands": [{
       "command": "smoke-typer.start",
       "title": "Smoke Typer"
