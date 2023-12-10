@@ -1,0 +1,47 @@
+{
+  "name": "smoke-typer",
+  "displayName": "Smoke Typer",
+  "description": "Tired of the mundane typing experience? Smoke Typer is here to inject some magic into your workflow. This VS Code extension adds a touch of visual flair by generating dynamic smoke and dust effects as you type each character.",
+  "version": "1.0.0",
+  "publisher": "HenilCode",
+  "license": "MIT",
+  "author": {
+    "name": "Henil Code",
+    "url": "https://github.com/HENILCODES"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "assets/logo.jpeg",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "smoke-typer.start",
+      "title": "Smoke Typer"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2",
+    "@vscode/test-electron": "^2.3.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HENILCODES/smoke-typer.git"
+  },
+  "homepage": "https://github.com/HENILCODES/smoke-typer/blob/master/README.md"
+}
