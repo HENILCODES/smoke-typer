@@ -38,5 +38,4 @@ Feel free to contribute to the development of Smoke Typer on [GitHub](https://gi
 
 This extension is licensed under the [MIT License](LICENSE.md).
 
-
 ###### Enjoy coding with the Smoke Typer!  💨 💨 💨
