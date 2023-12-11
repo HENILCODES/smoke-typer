@@ -9,13 +9,19 @@ function activate(context) {
             const isEnabled = vscode.workspace.getConfiguration('smoke-typer').get('enable', true);
 
             if (isEnabled) {
+                const intensity = vscode.workspace.getConfiguration('smoke-typer').get('intensity', 600);
+                const TextColor = vscode.workspace.getConfiguration('smoke-typer').get('TextColor', 'inherit');
+                const BackgroundColor = vscode.workspace.getConfiguration('smoke-typer').get('BackgroundColor', '#c9c9c44d');
+                const BorderRadius = vscode.workspace.getConfiguration('smoke-typer').get('BorderRadius', '3px');
+
                 // Get the current position of the cursor
                 const position = vscode.window.activeTextEditor.selection.active;
 
                 // Create a TextEditorDecorationType for the effect
                 const decorationType = vscode.window.createTextEditorDecorationType({
-                    backgroundColor: 'rgb(201 201 196 / 30%)',
-                    borderRadius: '3px'
+                    backgroundColor: `${BackgroundColor}`,
+                    color:`${TextColor}`,
+                    borderRadius: `${BorderRadius}`
                 });
 
                 // Define a range for the effect (e.g., one character around the cursor)
@@ -24,8 +30,8 @@ function activate(context) {
                 // Add the decoration to the editor
                 vscode.window.activeTextEditor.setDecorations(decorationType, [{ range }]);
 
-                // Dispose the decoration after a short delay (e.g., 500 milliseconds)
-                setTimeout(() => decorationType.dispose(), 600);
+                // Dispose the decoration after a short delay (e.g., 600 milliseconds)
+                setTimeout(() => decorationType.dispose(), intensity);
             }
         }
     });

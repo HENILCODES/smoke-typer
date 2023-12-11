@@ -2,7 +2,7 @@
   "name": "smoke-typer",
   "displayName": "Smoke Typer",
   "description": "Tired of the mundane typing experience? Smoke Typer is here to inject some magic into your workflow. This VS Code extension adds a touch of visual flair by generating dynamic smoke and dust effects as you type each character.",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "publisher": "HenilCode",
   "license": "MIT",
   "author": {
@@ -28,6 +28,26 @@
           "type": "boolean",
           "default": true,
           "description": "Enable or disable Smoke Typer Effect"
+        },
+        "smoke-typer.intensity": {
+          "type": "number",
+          "default": 600,
+          "description": "Set the intensity of the smoke effect in milliseconds"
+        },
+        "smoke-typer.TextColor": {
+          "type": "string",
+          "default": "inherit",
+          "description": "Set the color of the smoke effect text color"
+        },
+        "smoke-typer.BackgroundColor": {
+          "type": "string",
+          "default": "#c9c9c44d",
+          "description": "Set the color of the smoke effect BackgroundColor (hex or color name)"
+        },
+        "smoke-typer.BorderRadius": {
+          "type": "string",
+          "default": "3px",
+          "description": "Set the smoke effect Border radius"
         }
       }
     },
