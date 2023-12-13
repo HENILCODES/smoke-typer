@@ -1,7 +1,7 @@
 # Smoket Typer Extension for VS Code
 
 <div align="center">
-  <img src="https://imagizer.imageshack.com/img923/4696/vTkMdi.jpg" alt="Smoket Typer" width="300" style="border-radius: 50%;"></div>
+  <img src="https://i.postimg.cc/DZzfQB1B/logo.jpg" alt="Smoket Typer" width="300" style="border-radius: 50%;"></div>
 
 <div> </div>
 
